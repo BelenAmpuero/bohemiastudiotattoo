@@ -1,376 +1,440 @@
-@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=UnifrakturMaguntia&display=swap');
-
-
-/* RESET */
-
+@charset "UTF-8";
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 7 | @use "sus-experiencias";
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   sass\styles.scss 7:1  root stylesheet */
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Fondamento;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color:  rgba(13, 13, 13, 0.912);
-    height: 100vh;
+body {
+  background-color: rgba(13, 13, 13, 0.912);
 }
 
-
-h1{
-    font-family: Fondamento;
-    color: rgba(199, 201, 200, 0.652);
-    font-size: 35px;
+.pagina_artista main {
+  height: 200vh;
+  width: 100%;
+  padding: 0.5px 0.5px 0.5px 0px;
 }
 
-h2{
-    font-family: Fondamento;
-    color: rgba(199, 201, 200, 0.652);
-    font-size: 28px;
+.autoria {
+  margin: 10vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
-
-h3{
-      font-family: Fondamento;
-    color: rgba(199, 201, 200, 0.652);
-    font-size: 25px;
+.autoria .contenedor {
+  height: 97vh;
+  width: 90vh;
+  border-radius: 5%;
 }
-
-p{
-      font-family: Fondamento;
-    color: rgba(199, 201, 200, 0.652);
-    font-size: 20px;
+.autoria .contenedor img {
+  height: 70vh;
+  border-radius: 5%;
 }
-
-
-a{
-   font-family: Fondamento;
-    color: rgba(199, 201, 200, 0.652);
-    font-size: 20px;
-    text-decoration: none;
-}
-
-label{
-     font-family: Fondamento;
-    color: rgba(199, 201, 200, 0.652);
-}
-
-.titulos{
-    font-family: Fondamento;
-    color: rgba(107, 117, 57, 0.966);
-    font-size: 78px;
-    display: flex;
-    justify-content: center;
-}
-
-.subtitulos{
-    font-family: UnifrakturMagunt;
-    color: rgba(199, 201, 200, 0.652);
-    display: flex;
-    flex-flow: row;
-    justify-content: center;
-    font-size: 45px;
-}
-
-/*HEADER*/
-
-.navegacion{
-     height: 7vh;
-     width: 100%;
-    background-color: rgba(0, 0, 0, 0.47);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;  
-}
-
-.navegacion a{
-    width: 100%;
-    padding: 0vw 0.5vw;
+.autoria .parrafo {
+  height: 70vh;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.47);
+  border-radius: 10%;
+  padding: 30px;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
   align-items: baseline;
+  flex-flow: column;
+  justify-content: center;
+}
+.autoria .parrafo h1 {
+  font-family: Fondamento;
+  color: #0d6efd;
+}
+.autoria .parrafo h2, .autoria .parrafo h3, .autoria .parrafo h4 {
+  color: rgba(199, 201, 200, 0.652);
 }
 
-.navegacion a:hover{
-    display: inline-block; 
-    background-color:  rgba(47, 50, 49, 0.912);
-    transform: scale(1); 
-    border-radius: 100%;
-    font-weight: bold;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-
-}
-
-
-.encabezado img{
-    height: 62vh;
-    width: 100%;
-    display: grid;
-    align-items: stretch;
-}
-
-
-
-/*ARTISTAS*/
-
-.diseños{
-    display: flex;
-    justify-content: space-around;
-    flex-flow: row wrap;
-    align-content: flex-end;
-}
-
-.diseños img{
-    height: 60vh;
-    width: auto;
-}
-
-.diseño{
-    height: 40vh;
-    width: auto;
-    display: flex;
-
-}
-
-.presentacion{
-    height: 70vh;
-    width: auto;
-    padding: 30vh;
+.diseños.sabandija {
   display: flex;
-  flex-flow: column wrap;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  margin: 85px 5px;
+  /* La imagen que tiene el mouse encima se ilumina y agranda */
+}
+.diseños.sabandija img {
+  height: 65vh;
+  width: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+}
+.diseños.sabandija:hover img {
+  opacity: 0.4;
+}
+.diseños.sabandija img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.diseños {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  margin: 85px 5px;
+  /* La imagen que tiene el mouse encima se ilumina y agranda */
+}
+.diseños img {
+  height: 60vh;
+  width: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+}
+.diseños:hover img {
+  opacity: 0.4;
+}
+.diseños img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.presentacion {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  padding-top: 35%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.presentacion iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.titulos h1 {
+  color: rgba(107, 117, 57, 0.966);
+  font-family: UnifrakturCook;
+  margin: 55px;
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.47);
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .autoria {
+    grid-template-columns: 1fr;
+  }
+  .parrafo {
+    padding: 15px;
+    text-align: center;
+  }
+  .diseños img,
+  .diseños.sabandija img {
+    width: 100%;
+    height: auto;
+  }
+}
+.contacto {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  margin: 40px;
+}
+.contacto .turno {
+  background-color: rgba(0, 0, 0, 0.47);
+  color: rgba(199, 201, 200, 0.652);
+  grid-column: 1/3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 2rem 0;
+}
+.contacto .exper {
+  background-color: rgba(0, 0, 0, 0.47);
+  color: rgba(199, 201, 200, 0.652);
+  font-size: 20px;
+  grid-column: end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
-video{
-    height: 40vh;
-    width: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.accordion-button.collapsed {
+  background-color: rgba(13, 13, 13, 0.912) !important;
+  color: rgba(107, 117, 57, 0.966);
 }
 
-/*MAIN*/
-
-main{
-    height: 330vh;
-    width: 100%;
-    padding: 0.5px 0.5px 0.5px 0.0px;
+.accordion-body {
+  background-color: rgba(0, 0, 0, 0.47);
+  font-family: Fondamento;
 }
 
-
-.tarjetas{
-    display: flex;
-    justify-content: space-evenly;
-    align-content: end;
-    margin: 40px;
+.tarjetas {
+  display: flex; /* activa flexbox */
+  flex-wrap: wrap; /* permite que bajen si no entran en la misma fila */
+  justify-content: center; /* centra las cards horizontalmente */
+  align-items: flex-start; /* alinea arriba las cards */
 }
-
-.tarjetas a{
- font-family: Fondamento;
-    color: rgba(107, 117, 57, 0.966);
-     font-size: 25px;
-    text-decoration: none;
-}
-
-/*Main Tarjeta Pepito*/
-
-.tarjetapepito{
-
-    height: 77vh;
-    width: 50vh;
-    background-image: url(../img/centro\ black.jpg);
-    background-size: cover; /* para que la imagen ocupe todo el div */
-    background-position: center; /* centrada */
-    margin: 30px;
-    border: 5px solid black;
-    border-radius: 20%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: stretch;
-    text-align: center;
-    position: relative;
-}
-
- .overlay {
-  position: absolute; /* se posiciona sobre la imagen */
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* negro con 40% de opacidad */
-  z-index: 0; /* fondo: va detrás del texto */
-  border-radius: 20%;
- }
-
- .tarjetapepito > *:not(.overlay) {
+.tarjetas .card {
+  height: 77vh;
+  width: 50vh;
+  font-family: UnifrakturCook;
+  color: rgba(199, 201, 200, 0.652);
+  background-size: cover;
+  background-position: center;
+  margin: 30px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  text-align: center;
   position: relative;
-  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.47);
+}
+.tarjetas .card-img-top {
+  overflow: hidden;
 }
 
-.tarjetapepito:hover a{
-    font-weight: bold;
-    transform: scale(1.5);
-    display: inline-block; 
-}
-
-/*Main Tarjeta Tsunami*/
-
-.tarjetatsunami{
-
-    height: 77vh;
-    width: 50vh;
-    background-image: url(../img/nathalie-stimpfl-m0EDPy_qA34-unsplash.jpg);
-    background-size: cover; /* para que la imagen ocupe todo el div */
-    background-position: center; /* centrada */
-    margin: 30px;
-    border: 5px solid black;
-    border-radius: 20%;
+@media (max-width: 576px) {
+  .contacto {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    position: relative;
-}
-
- .tarjetatsunami > *:not(.overlay) {
-  position: relative;
-  z-index: 2;
-}
-
-.tarjetatsunami:hover a{
-    font-weight: bold;
-    transform: scale(1.5);
-    display: inline-block; 
-}
-/*Main Tarjeta Bohemia*/
-
-.tarjetabohemia{
-    height: 77vh;
-    width: 50vh;
-    background-image: url(../img/pexels-daniel-lazarov-1357330-2623692.jpg);
-    background-size: cover; /* para que la imagen ocupe todo el div */
-    background-position: center; /* centrada */
-    border: 5px solid black;
-    border-radius: 20%;
-    display: flex;
+  }
+  .tarjetas {
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    text-align: center;
-    position: relative;
+  }
+  .tarjetas .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
 }
-
-
- .tarjetabohemia > *:not(.overlay) {
-  position: relative;
-  z-index: 2;
+footer {
+  background-color: rgba(13, 13, 13, 0.912);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
 }
-
-.tarjetabohemia:hover a{
-    font-weight: bold;
-    transform: scale(1.5);
-    display: inline-block; 
+footer img {
+  font-family: Fondamento;
+  height: 8vh;
+  width: auto;
 }
-
-
-.tarjeta h1{
-    font-family: 'UnifrakturMaguntia';
-    color: rgba(51, 58, 51, 0.948);
-    font-size: 35px;
+footer .mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 5px;
 }
-
-
-li{
-    font-family: Fondamento;
-    font-size: 25px; 
-    color:  rgba(199, 201, 200, 0.962);
-  
+footer .mapa {
+  height: 60vh;
 }
-
-
-
-
-.parrafo{
-     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-flow: column;
-    
+footer .contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(199, 201, 200, 0.652);
 }
-
-.contenedor{
-     display: flex;
-    justify-content: space-evenly;
-    flex-flow: row wrap;
-     background-color:  rgba(13, 13, 13, 0.912);
-    padding: 10px 0px;
-    margin: 30px;
+footer .contacto ul {
+  list-style: none;
+  color: rgba(199, 201, 200, 0.652);
 }
-
-.carrucel{
-    padding: 0.5px;
-    margin: 30px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-/*FOOTER*/
-
-footer{
-     background-color:  rgba(13, 13, 13, 0.912);
-     display: grid;
-     grid-template-columns: 2fr 1fr;
-    width: 100%;
-     /* grid-template-areas: "mapa nav"; */
-    
-}
-
-footer img{  /*Lpogos de las redes de contacto*/
-  /*  background-color:  rgba(199, 201, 200, 0.962);*/
-    font-family: Fondamento;
-    height: 8vh;
-    width: auto;
-}
-
-ul{
-    list-style: none;
-
-}
-
-.mapa iframe {
-    width: 100%;
-    height: 100%;
-    border: 5px;
-}
-
-.mapa{
-    height: 60vh;
-}
-
-.contacto{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.boton-whatsapp {
+footer .boton-whatsapp {
   position: fixed;
-  bottom: 20px;   /* distancia desde abajo */
-  right: 20px;    /* distancia desde la derecha */
-  z-index: 1000;  /* para que esté por encima de otros elementos */
+  bottom: 20px; /* distancia desde abajo */
+  right: 20px; /* distancia desde la derecha */
+  z-index: 1000; /* para que esté por encima de otros elementos */
 }
-
-.boton-whatsapp img {
-  width: 70px;    /* tamaño del icono */
+footer .boton-whatsapp img {
+  width: 70px; /* tamaño del icono */
   height: auto;
   cursor: pointer;
 }
 
+header {
+  background-color: rgba(0, 0, 0, 0.47);
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+header .nav {
+  display: flex;
+  justify-content: center;
+}
+header .nav .nav-pills {
+  height: vh;
+  width: 100%;
+  gap: 20px;
+}
+header .nav .nav-pills .nav-link a {
+  color: rgba(107, 117, 57, 0.966) !important;
+  text-decoration: none;
+  padding: 0vw 0.5vw;
+}
+header .nav .nav-pills .nav-link a:hover {
+  background-color: UnifrakturCook !important;
+  border-radius: 100%;
+  font-weight: bold;
+}
+header .nav .nav-pills .nav-link.active {
+  background-color: UnifrakturCook !important;
+  color: rgba(107, 117, 57, 0.966) !important;
+}
+header .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.47) !important;
+}
+header .dropdown-menu .dropdown-item {
+  color: rgba(199, 201, 200, 0.652) !important;
+}
+header .dropdown-menu .dropdown-item:hover {
+  background-color: UnifrakturCook !important;
+  color: rgba(107, 117, 57, 0.966) !important;
+}
+
+main {
+  height: auto;
+  width: 100%;
+  padding: 0.5px 0.5px 0.5px 0px;
+  overflow: hidden;
+}
+main .encabezado img {
+  height: 62vh;
+  width: 100%;
+  display: grid;
+  align-items: stretch;
+}
+main .contenedor {
+  display: flex;
+  flex-direction: column; /* Apila los hijos en vertical */
+  align-items: center;
+  background-color: rgba(13, 13, 13, 0.912);
+  padding: 10px 0px;
+  margin: 30px;
+}
+main .contenedor .titulos {
+  font-family: UnifrakturCook;
+  color: rgba(107, 117, 57, 0.966);
+  font-size: 78px;
+  display: flex;
+  justify-content: center;
+}
+main .subtitulos {
+  color: rgba(199, 201, 200, 0.652);
+}
+main .parrafo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+}
+main .parrafo h3, main .parrafo p {
+  color: rgba(199, 201, 200, 0.652);
+}
+main .carrucel {
+  padding: 0.5px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+main .tarjetas {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: end;
+  margin: 40px;
+}
+main .tarjetas .tarjetas {
+  font-family: Fondamento;
+  color: rgba(107, 117, 57, 0.966);
+  font-size: 25px;
+  text-decoration: none;
+}
+main .tarjetas .tarjetapepito, main .tarjetas .tarjetabohemia, main .tarjetas .tarjetatsunami {
+  height: 77vh;
+  width: 50vh;
+  font-family: UnifrakturCook;
+  color: rgba(199, 201, 200, 0.652);
+  background-size: cover; /* para que la imagen ocupe todo el div */
+  background-position: center; /* centrada */
+  margin: 30px;
+  border: 5px solid black;
+  border-radius: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  text-align: center;
+  position: relative;
+}
+main .tarjetas .tarjetapepito .li, main .tarjetas .tarjetabohemia .li, main .tarjetas .tarjetatsunami .li {
+  list-style: none;
+}
+main .tarjetas .tarjetapepito .overlay, main .tarjetas .tarjetabohemia .overlay, main .tarjetas .tarjetatsunami .overlay {
+  position: absolute; /* se posiciona sobre la imagen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* negro con 40% de opacidad */
+  z-index: 0; /* fondo: va detrás del texto */
+  border-radius: 20%;
+}
+main .tarjetas .tarjetapepito :not(.overlay), main .tarjetas .tarjetabohemia :not(.overlay), main .tarjetas .tarjetatsunami :not(.overlay) {
+  position: relative;
+  z-index: 2;
+}
+main .tarjetas .tarjetapepito :hover a, main .tarjetas .tarjetabohemia :hover a, main .tarjetas .tarjetatsunami :hover a {
+  font-weight: bold;
+  transform: scale(1.5);
+  display: inline-block;
+}
+main .tarjetapepito {
+  background-image: url(../img/centro\ black.jpg);
+}
+main .tarjetabohemia {
+  background-image: url(../img/pexels-daniel-lazarov-1357330-2623692.jpg);
+}
+main .tarjetatsunami {
+  background-image: url(../img/nathalie-stimpfl-m0EDPy_qA34-unsplash.jpg);
+}
+
+@media (max-width: 768px) {
+  .autoria {
+    grid-template-columns: 1fr;
+    margin: 5vh auto;
+  }
+  .contenedor {
+    width: 100%;
+    height: auto;
+  }
+  .parrafo {
+    width: 100%;
+    height: auto;
+  }
+  .diseños img,
+  .diseños.sabandija img {
+    height: auto;
+    width: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=estilo.css.map */

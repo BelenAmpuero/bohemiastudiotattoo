@@ -1,0 +1,47 @@
+@use "variables" as v;
+
+footer{
+    background-color:  v.$color_primario;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    width: 100%; 
+    img{
+    font-family: Fondamento;
+    height: 8vh;
+    width: auto;
+    }
+    
+    .mapa iframe {
+    width: 100%;
+    height: 100%;
+    border: 5px;
+    }
+    .mapa{
+    height: 60vh;
+    }
+
+    .contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: v.$color_letras;
+
+        ul{
+        list-style: none;
+        color: v.$color_letras
+        }
+
+    }
+    .boton-whatsapp {
+    position: fixed;
+    bottom: 20px;   /* distancia desde abajo */
+    right: 20px;    /* distancia desde la derecha */
+    z-index: 1000;  /* para que esté por encima de otros elementos */
+    }
+    .boton-whatsapp img {
+    width: 70px;    /* tamaño del icono */
+    height: auto;
+    cursor: pointer;
+    }
+    }

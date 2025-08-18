@@ -1,0 +1,48 @@
+@use "variables" as v;
+
+header{
+    background-color: v.$color_navegacion; 
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+    .nav {
+    display: flex;
+    justify-content: center;
+    .nav-pills {
+    height: vh;
+    width: 100%;
+    gap: 20px;
+    .nav-link a{
+        color: v.$color-titulos !important;
+        text-decoration: none;
+        padding: 0vw 0.5vw;
+     &:hover {
+        background-color: v.$fuenteprincipal !important;
+        border-radius: 100%;
+        font-weight: bold;
+        }
+      }
+
+      // Estilo para el enlace activo
+      .nav-link.active {
+        background-color: v.$fuenteprincipal !important;
+        color: v.$color-titulos !important;
+      }
+    }
+  }
+
+  // Fondo del menú desplegable
+  .dropdown-menu {
+    background-color: v.$color_navegacion !important;
+
+    .dropdown-item {
+      color: v.$color_letras !important;
+
+      &:hover {
+        background-color: v.$fuenteprincipal !important;
+        color: v.$color-titulos !important;
+      }
+    }
+  }
+}
+

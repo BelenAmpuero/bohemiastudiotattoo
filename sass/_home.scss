@@ -1,0 +1,130 @@
+@use "variables" as v;
+
+main{
+    height: auto;
+    width: 100%;
+    padding: 0.5px 0.5px 0.5px 0.0px;
+    overflow: hidden;
+    .encabezado img{
+    height: 62vh;
+    width: 100%;
+    display: grid;
+    align-items: stretch;
+}
+    .contenedor{
+    display: flex;
+   flex-direction: column; /* Apila los hijos en vertical */
+    align-items: center;
+    background-color: v.$color_primario;
+    padding: 10px 0px;
+    margin: 30px;
+    .titulos{ 
+    font-family: v.$fuenteprincipal;
+    color: v.$color-titulos;
+    font-size: 78px;
+    display: flex;
+    justify-content: center;}
+    }
+    .subtitulos{
+        color: v.$color_letras;
+    }
+    .parrafo{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-flow: column;
+    h3, p{
+        color: v.$color_letras;
+    }
+    }
+    .carrucel{
+    padding: 0.5px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    }
+    .tarjetas{
+    display: flex;
+    justify-content: space-evenly;
+    align-content: end;
+    margin: 40px;
+    .tarjetas {
+    font-family: Fondamento;
+    color: v.$color_titulos;
+    font-size: 25px;
+    text-decoration: none;
+    }
+    .tarjetapepito, .tarjetabohemia, .tarjetatsunami{
+    height: 77vh;
+    width: 50vh;
+    font-family: v.$fuenteprincipal;
+    color: v.$color_letras;
+    background-size: cover; /* para que la imagen ocupe todo el div */
+    background-position: center; /* centrada */
+    margin: 30px;
+    border: 5px solid black;
+    border-radius: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    text-align: center;
+    position: relative;
+    
+    .li{
+        list-style: none;
+    }
+    .overlay{
+    position: absolute; /* se posiciona sobre la imagen */
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* negro con 40% de opacidad */
+    z-index: 0; /* fondo: va detrás del texto */
+    border-radius: 20%;
+    }
+    :not(.overlay){
+    position: relative;
+    z-index: 2;
+    }
+    :hover a{
+    font-weight: bold;
+    transform: scale(1.5);
+    display: inline-block; 
+    }
+}
+    }
+    .tarjetapepito{
+    background-image: url(../img/centro\ black.jpg);
+    }
+    .tarjetabohemia{
+    background-image: url(../img/pexels-daniel-lazarov-1357330-2623692.jpg);
+    }
+    .tarjetatsunami{
+    background-image: url(../img/nathalie-stimpfl-m0EDPy_qA34-unsplash.jpg);
+    }
+    }
+
+  @media (max-width: 768px) {
+
+  .autoria {
+    grid-template-columns: 1fr; // tarjetas una debajo de otra
+    margin: 5vh auto;
+  }
+
+  .contenedor {
+    width: 100%;
+    height: auto;
+  }
+
+  .parrafo {
+    width: 100%;
+    height: auto;
+  }
+
+  .diseños img,
+  .diseños.sabandija img {
+    height: auto;
+    width: 100%;
+  }
+}

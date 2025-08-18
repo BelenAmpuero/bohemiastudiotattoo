@@ -1,0 +1,43 @@
+/* Error: Can't find stylesheet to import.
+ *   ,
+ * 7 | @use "sus-experiencias";
+ *   | ^^^^^^^^^^^^^^^^^^^^^^^
+ *   '
+ *   sass\styles.scss 7:1  root stylesheet */
+
+@use "artistas";
+@use "contacto";
+@use "footer";
+@use "header";
+@use "home";
+@use "variables";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+// body::before {
+//   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+//       "Droid Sans Mono", monospace, monospace;
+//   white-space: pre;
+//   display: block;
+//   padding: 1em;
+//   margin-bottom: 1em;
+//   border-bottom: 2px solid black;
+//   content: "Error: Can't find stylesheet to import.\a   \2577 \a 7 \2502  @use \"sus-experiencias\";\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\styles.scss 7:1  root stylesheet";
+// }
+
+// .navegacion{
+//   a{
+//     font-family: v.$fuentesecundaria;
+//     width: 100%;
+//     padding: 0vw 0.5vw;
+//     display: flex;
+//     flex-flow: row wrap;
+//     justify-content: center;
+//     align-items: baseline;
+//   }
+// }
