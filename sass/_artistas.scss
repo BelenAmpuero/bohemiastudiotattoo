@@ -1,7 +1,7 @@
 @use "variables" as v;
 
 .pagina_artista main{
-    height: 200vh;
+    height: auto;
     width: 100%;
     padding: 0.5px 0.5px 0.5px 0.0px;
 }
@@ -11,12 +11,13 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     .contenedor{
-    height: 97vh;
-    width: 90vh;
+    max-width: 100%;
+    height: auto;
     border-radius: 5%;
     img{
-        height: 70vh;
-        border-radius: 5%;
+       width: 100%;
+      height: auto;
+      border-radius: 5%;
     }
     }
     .parrafo{
@@ -119,19 +120,29 @@ margin: auto;
 }
 
 @media (max-width: 768px) {
+  
   .autoria {
-    grid-template-columns: 1fr; // todo en una sola columna    
+    grid-template-columns: 1fr;
+    margin: 5vh 2vh;
   }
 
   .parrafo {
     padding: 15px;
     text-align: center;
+    font-size: 1rem;
+  }
+
+  .contenedor img{
+    width: 100%;
+    height: auto;
   }
 
   .diseños img,
   .diseños.sabandija img {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 }
 
