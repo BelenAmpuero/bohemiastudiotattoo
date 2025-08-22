@@ -18,8 +18,36 @@ body {
   background-color: rgba(13, 13, 13, 0.912);
 }
 
+.bottom, .contacto .bottom {
+  box-sizing: border-box;
+  background-color: rgba(0, 128, 0, 0.51);
+  height: auto;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card, main .tarjetas .tarjetapepito, main .tarjetas .tarjetabohemia, main .tarjetas .tarjetatsunami, .tarjetas .card {
+  height: 77vh;
+  width: 50vh;
+  font-family: UnifrakturCook;
+  color: rgba(199, 201, 200, 0.652);
+  background-size: cover;
+  background-position: center;
+  margin: 30px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.47);
+}
+
 .pagina_artista main {
-  height: 200vh;
+  height: auto;
   width: 100%;
   padding: 0.5px 0.5px 0.5px 0px;
 }
@@ -30,12 +58,13 @@ body {
   grid-template-columns: repeat(2, 1fr);
 }
 .autoria .contenedor {
-  height: 97vh;
-  width: 90vh;
+  max-width: 100%;
+  height: auto;
   border-radius: 5%;
 }
 .autoria .contenedor img {
-  height: 70vh;
+  width: 100%;
+  height: auto;
   border-radius: 5%;
 }
 .autoria .parrafo {
@@ -134,15 +163,23 @@ body {
 @media (max-width: 768px) {
   .autoria {
     grid-template-columns: 1fr;
+    margin: 5vh 2vh;
   }
   .parrafo {
     padding: 15px;
     text-align: center;
+    font-size: 1rem;
+  }
+  .contenedor img {
+    width: 100%;
+    height: auto;
   }
   .diseños img,
   .diseños.sabandija img {
     width: 100%;
+    max-width: 100%;
     height: auto;
+    margin-bottom: 20px;
   }
 }
 .contacto {
@@ -152,14 +189,21 @@ body {
   gap: 20px;
   margin: 40px;
 }
+.contacto form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
 .contacto .turno {
   background-color: rgba(0, 0, 0, 0.47);
   color: rgba(199, 201, 200, 0.652);
   grid-column: 1/3;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-items: center;
   align-items: center;
+  margin: 1em;
 }
 .contacto .exper {
   background-color: rgba(0, 0, 0, 0.47);
@@ -183,27 +227,10 @@ body {
 }
 
 .tarjetas {
-  display: flex; /* activa flexbox */
-  flex-wrap: wrap; /* permite que bajen si no entran en la misma fila */
-  justify-content: center; /* centra las cards horizontalmente */
-  align-items: flex-start; /* alinea arriba las cards */
-}
-.tarjetas .card {
-  height: 77vh;
-  width: 50vh;
-  font-family: UnifrakturCook;
-  color: rgba(199, 201, 200, 0.652);
-  background-size: cover;
-  background-position: center;
-  margin: 30px;
-  border: 5px solid black;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  text-align: center;
-  position: relative;
-  background-color: rgba(0, 0, 0, 0.47);
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
 }
 .tarjetas .card-img-top {
   overflow: hidden;
@@ -319,7 +346,7 @@ main .encabezado img {
 }
 main .contenedor {
   display: flex;
-  flex-direction: column; /* Apila los hijos en vertical */
+  flex-direction: column;
   align-items: center;
   background-color: rgba(13, 13, 13, 0.912);
   padding: 10px 0px;
@@ -364,21 +391,7 @@ main .tarjetas .tarjetas {
   text-decoration: none;
 }
 main .tarjetas .tarjetapepito, main .tarjetas .tarjetabohemia, main .tarjetas .tarjetatsunami {
-  height: 77vh;
-  width: 50vh;
-  font-family: UnifrakturCook;
-  color: rgba(199, 201, 200, 0.652);
-  background-size: cover; /* para que la imagen ocupe todo el div */
-  background-position: center; /* centrada */
-  margin: 30px;
-  border: 5px solid black;
   border-radius: 20%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: stretch;
-  text-align: center;
-  position: relative;
 }
 main .tarjetas .tarjetapepito .li, main .tarjetas .tarjetabohemia .li, main .tarjetas .tarjetatsunami .li {
   list-style: none;

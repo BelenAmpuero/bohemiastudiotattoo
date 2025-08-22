@@ -57,8 +57,7 @@ main{
     }
     .tarjetapepito, .tarjetabohemia, .tarjetatsunami{
     @extend .card;
-     border-radius: 20%;
-     
+    border-radius: 20%;
     .li{
         list-style: none;
     }

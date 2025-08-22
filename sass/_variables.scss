@@ -27,6 +27,34 @@ body{
     background-color: $color_primario;
 }
 
+.bottom{
+    box-sizing: border-box;
+    background-color: rgba(0, 128, 0, 0.51);
+    height: auto;
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card{
+        height: 77vh;
+    width: 50vh;
+    font-family: UnifrakturCook;
+    color: rgba(199, 201, 200, 0.652);
+    background-size: cover;
+    background-position: center;
+    margin: 30px;
+    border: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: stretch;
+    text-align: center;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.47);
+}
+
 @mixin mobile{
     @media (max-width: 430px){
     @content
