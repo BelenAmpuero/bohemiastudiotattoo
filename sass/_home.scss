@@ -5,12 +5,13 @@ main{
     width: 100%;
     padding: 0.5px 0.5px 0.5px 0.0px;
     overflow: hidden;
+    @include v.mobile{
+    flex-direction: column;
+    }
     .encabezado img{
-    height: 62vh;
+    height: auto;
     width: 100%;
-    display: grid;
-    align-items: stretch;
-}
+    }
     .contenedor{
     display: flex;
     flex-direction: column;
@@ -18,6 +19,9 @@ main{
     background-color: v.$color_primario;
     padding: 10px 0px;
     margin: 30px;
+    @include v.mobile{
+    margin: 0.5px;
+    }    
     .titulos{ 
     font-family: v.$fuenteprincipal;
     color: v.$color-titulos;
@@ -37,13 +41,19 @@ main{
         color: v.$color_letras;
     }
     }
-    .carrucel{
-    padding: 0.5px;
-    margin: 30px;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    .carousel-inner{
+        @include v.mobile{
+        height: auto;
+        width: 100%;
     }
+     .d-block w-90{
+    @include v.mobile{
+    height: 200px !important; 
+width: auto; 
+  }
+}
+    }
+    
     .tarjetas{
     display: flex;
     justify-content: space-evenly;
@@ -91,26 +101,4 @@ main{
     }
     }
 
-  @media (max-width: 768px) {
 
-  .autoria {
-    grid-template-columns: 1fr; 
-    margin: 5vh auto;
-  }
-
-  .contenedor {
-    width: 100%;
-    height: auto;
-  }
-
-  .parrafo {
-    width: 100%;
-    height: auto;
-  }
-
-  .diseños img,
-  .diseños.sabandija img {
-    height: auto;
-    width: 100%;
-  }
-}

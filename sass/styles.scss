@@ -1,43 +1,518 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 7 | @use "sus-experiencias";
- *   | ^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   sass\styles.scss 7:1  root stylesheet */
-
-@use "artistas";
-@use "contacto";
-@use "footer";
-@use "header";
-@use "home";
-@use "variables";
-
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fondamento:ital@0;1&family=UnifrakturCook:wght@700&family=UnifrakturMaguntia&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  font-family: Fondamento;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(13, 13, 13, 0.912);
+}
+
+.bottom, .agenda .turnoag form .bottom, .agenda .turnoex form .bottom {
+  box-sizing: border-box;
+  background-color: rgba(0, 128, 0, 0.51);
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card, main .tarjetas .tarjetapepito, main .tarjetas .tarjetabohemia, main .tarjetas .tarjetatsunami, .tarjetas .card {
+  height: 77vh;
+  width: 50vh;
+  font-family: UnifrakturCook;
+  color: rgba(199, 201, 200, 0.652);
+  background-size: cover;
+  background-position: center;
+  margin: 30px;
+  border: 5px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.47);
+}
+
+.turno, .agenda .turnoag, .agenda .turnoex {
+  background-color: rgba(0, 0, 0, 0.47);
+  color: rgba(199, 201, 200, 0.652);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1em;
+  gap: 1em;
+}
+
+.form, .agenda .turnoag form, .agenda .turnoex form {
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.input, .agenda .turnoag form input, .agenda .turnoex form input {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.pagina_artista main {
+  height: auto;
+  width: 100%;
+  padding: 0.5px 0.5px 0.5px 0px;
+}
+
+.autoria {
+  margin: 10vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.autoria .contenedor {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.autoria .contenedor img {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.autoria .parrafo {
+  height: 70vh;
+  width: auto;
+  background-color: rgba(0, 0, 0, 0.47);
+  border-radius: 10%;
+  padding: 30px;
+  display: flex;
+  align-items: baseline;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.autoria .parrafo h1 {
+  font-family: Fondamento;
+  color: #0d6efd;
+}
+
+.autoria .parrafo h2, .autoria .parrafo h3, .autoria .parrafo h4 {
+  color: rgba(199, 201, 200, 0.652);
+}
+
+.diseños.sabandija {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  margin: 85px 5px;
+  /* La imagen que tiene el mouse encima se ilumina y agranda */
+}
+
+.diseños.sabandija img {
+  height: 65vh;
+  width: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+}
+
+.diseños.sabandija:hover img {
+  opacity: 0.4;
+}
+
+.diseños.sabandija img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.diseños {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  align-content: flex-end;
+  margin: 85px 5px;
+  /* La imagen que tiene el mouse encima se ilumina y agranda */
+}
+
+.diseños img {
+  height: 60vh;
+  width: auto;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  cursor: pointer;
+}
+
+.diseños:hover img {
+  opacity: 0.4;
+}
+
+.diseños img:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.presentacion {
+  position: relative;
+  width: 80%;
+  max-width: 900px;
+  padding-top: 35%;
+  overflow: hidden;
+  margin: auto;
+}
+
+.presentacion iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.titulos h1 {
+  color: rgba(107, 117, 57, 0.966);
+  font-family: UnifrakturCook;
+  margin: 55px;
+  font-size: 80px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.47);
+  border-radius: 5%;
+}
+
+@media (max-width: 768px) {
+  .autoria {
+    grid-template-columns: 1fr;
+    margin: 5vh 2vh;
+  }
+  .parrafo {
+    padding: 15px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .contenedor img {
+    width: 100%;
+    height: auto;
+  }
+  .diseños img,
+  .diseños.sabandija img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+.agenda {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "ag . ex";
+  gap: 10px;
+  padding: 10px;
+}
+
+.agenda .turnoag {
+  grid-area: ag;
+}
+
+.agenda .turnoag form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.agenda .turnoex {
+  grid-area: ex;
+}
+
+.agenda .turnoex .experiencia {
+  font-size: 4em;
+}
+
+.agenda .turnoex form div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.accordion-button.collapsed {
+  background-color: rgba(13, 13, 13, 0.912) !important;
+  color: rgba(107, 117, 57, 0.966);
+}
+
+.accordion-body {
+  background-color: rgba(0, 0, 0, 0.47);
+  font-family: Fondamento;
+}
+
+.tarjetas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.tarjetas .card-img-top {
+  overflow: hidden;
+}
+
+.tarjetas .experiencia {
+  font-size: 3em;
+}
+
+@media (max-width: 430px) {
+  .contacto {
+    display: flex;
+    flex-direction: column;
+  }
+  .tarjetas {
+    flex-direction: column;
+    align-items: center;
+  }
+  .tarjetas .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+}
+footer {
+  background-color: rgba(13, 13, 13, 0.912);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  width: 100%;
+}
+
+footer img {
+  font-family: Fondamento;
+  height: 8vh;
+  width: auto;
+}
+
+footer .mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 5px;
+}
+
+footer .contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgba(199, 201, 200, 0.652);
+}
+
+footer .contacto ul {
+  list-style: none;
+  color: rgba(199, 201, 200, 0.652);
+}
+
+footer .boton-whatsapp {
+  position: fixed;
+  bottom: 20px; /* distancia desde abajo */
+  right: 20px; /* distancia desde la derecha */
+  z-index: 1000; /* para que esté por encima de otros elementos */
+}
+
+footer .boton-whatsapp img {
+  width: 70px; /* tamaño del icono */
+  height: auto;
+  cursor: pointer;
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.47);
+  position: sticky;
+  top: 0px;
+  z-index: 2;
+}
+
+header .nav {
+  display: flex;
+  justify-content: center;
+}
+
+header .nav .nav-pills {
+  height: vh;
+  width: 100%;
+  gap: 10px;
+}
+
+header .nav .nav-pills .nav-link a {
+  color: rgba(107, 117, 57, 0.966) !important;
+  text-decoration: none;
+  padding: 0vw 0.5vw;
+}
+
+header .nav .nav-pills .nav-link a:hover {
+  background-color: UnifrakturCook !important;
+  border-radius: 100%;
+  font-weight: bold;
+}
+
+header .nav .nav-pills .nav-link.active {
+  background-color: UnifrakturCook !important;
+  color: rgba(107, 117, 57, 0.966) !important;
+}
+
+header .dropdown-menu {
+  background-color: rgba(0, 0, 0, 0.47) !important;
+}
+
+header .dropdown-menu .dropdown-item {
+  color: rgba(199, 201, 200, 0.652) !important;
+}
+
+header .dropdown-menu .dropdown-item:hover {
+  background-color: UnifrakturCook !important;
+  color: rgba(107, 117, 57, 0.966) !important;
+}
+
+main {
+  height: auto;
+  width: 100%;
+  padding: 0.5px 0.5px 0.5px 0px;
+  overflow: hidden;
+}
+
+main .encabezado img {
+  height: auto;
+  width: 100%;
+}
+
+main .contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(13, 13, 13, 0.912);
+  padding: 10px 0px;
+  margin: 30px;
+}
+
+main .contenedor .titulos {
+  font-family: UnifrakturCook;
+  color: rgba(107, 117, 57, 0.966);
+  font-size: 78px;
+  display: flex;
+  justify-content: center;
+}
+
+main .subtitulos {
+  color: rgba(199, 201, 200, 0.652);
+}
+
+main .parrafo {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: column;
+}
+
+main .parrafo h3, main .parrafo p {
+  color: rgba(199, 201, 200, 0.652);
+}
+
+main .carrucel {
+  padding: 0.5px;
+  margin: 30px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+main .tarjetas {
+  display: flex;
+  justify-content: space-evenly;
+  align-content: end;
+}
+
+main .tarjetas .tarjetas {
+  font-family: Fondamento;
+  color: rgba(107, 117, 57, 0.966);
+  font-size: 25px;
+  text-decoration: none;
+}
+
+main .tarjetas .tarjetapepito, main .tarjetas .tarjetabohemia, main .tarjetas .tarjetatsunami {
+  border-radius: 20%;
+}
+
+main .tarjetas .tarjetapepito .li, main .tarjetas .tarjetabohemia .li, main .tarjetas .tarjetatsunami .li {
+  list-style: none;
+}
+
+main .tarjetas .tarjetapepito .overlay, main .tarjetas .tarjetabohemia .overlay, main .tarjetas .tarjetatsunami .overlay {
+  position: absolute; /* se posiciona sobre la imagen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* negro con 40% de opacidad */
+  z-index: 0; /* fondo: va detrás del texto */
+  border-radius: 20%;
+}
+
+main .tarjetas .tarjetapepito :not(.overlay), main .tarjetas .tarjetabohemia :not(.overlay), main .tarjetas .tarjetatsunami :not(.overlay) {
+  position: relative;
+  z-index: 2;
+}
+
+main .tarjetas .tarjetapepito :hover a, main .tarjetas .tarjetabohemia :hover a, main .tarjetas .tarjetatsunami :hover a {
+  font-weight: bold;
+  transform: scale(1.5);
+  display: inline-block;
+}
+
+main .tarjetapepito {
+  background-image: url(../img/centro\ black.jpg);
+}
+
+main .tarjetabohemia {
+  background-image: url(../img/pexels-daniel-lazarov-1357330-2623692.jpg);
+}
+
+main .tarjetatsunami {
+  background-image: url(../img/nathalie-stimpfl-m0EDPy_qA34-unsplash.jpg);
+}
+
+@media (max-width: 430px) {
+  .autoria {
+    grid-template-columns: 1fr;
+    margin: 5vh auto;
+  }
+  .contenedor {
+    height: auto;
+  }
+  .parrafo {
+    width: 100%;
+    height: auto;
+  }
+  .diseños img,
+  .diseños.sabandija img {
+    height: auto;
+    width: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 
-// body::before {
-//   font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-//       "Droid Sans Mono", monospace, monospace;
-//   white-space: pre;
-//   display: block;
-//   padding: 1em;
-//   margin-bottom: 1em;
-//   border-bottom: 2px solid black;
-//   content: "Error: Can't find stylesheet to import.\a   \2577 \a 7 \2502  @use \"sus-experiencias\";\d\a   \2502  ^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   sass\\styles.scss 7:1  root stylesheet";
-// }
 
-// .navegacion{
-//   a{
-//     font-family: v.$fuentesecundaria;
-//     width: 100%;
-//     padding: 0vw 0.5vw;
-//     display: flex;
-//     flex-flow: row wrap;
-//     justify-content: center;
-//     align-items: baseline;
-//   }
-// }
+/*# sourceMappingURL=styles.scss.map */
