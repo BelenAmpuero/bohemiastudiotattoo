@@ -42,15 +42,19 @@ main{
     }
     }
     .carousel-inner{
+        height: 600px;
+        width: auto;
         @include v.mobile{
         height: auto;
         width: 100%;
     }
-     .d-block w-90{
+    img .d-block.w-90{
+        height: 400px;
+        width: auto;
     @include v.mobile{
     height: 200px !important; 
 width: auto; 
-  }
+}
 }
     }
     

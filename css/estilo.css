@@ -191,6 +191,11 @@ body {
   border-radius: 5%;
 }
 
+    img .d-block.w-90{
+        height: 600px;
+        width: auto;
+      }
+
 @media (max-width: 430px) {
   .autoria {
     grid-template-columns: 1fr;
@@ -443,6 +448,11 @@ main .carrucel {
   align-content: center;
 }
 
+.carousel-inner{
+height: 600px;
+width: auto;
+  }
+
 main .tarjetas {
   display: flex;
   justify-content: space-evenly;
@@ -515,7 +525,7 @@ main .tarjetatsunami {
     height: auto;
     width: 100%;
   }
-  .d-block w-90{
+  img.d-block.w-90{
     height: 200px !important; 
 width: auto; 
   }
